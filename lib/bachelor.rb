@@ -47,17 +47,16 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  total_count = 0
+  total_count = []
   counter = 0
   data.each do |season_num, hash|
     hash.each do |outcome|
       outcome.each do |key, value|
         if key == "age"
-          total_count += value.to_i
-          counter += 1
+          total_count << value.to_i
         end
       end
     end
   end
-  (total_count/counter).round
+  total_count
 end
