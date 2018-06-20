@@ -2,7 +2,7 @@ def get_first_name_of_season_winner(data, season)
   silly_string = ""
   data.each do |season_num, hash|
     if season_num == season
-      hash["status"].each do |outcome|
+      hash.each do |outcome|
         if outcome == "Winner"
           silly_string << hash["name"].split(" ")
         end
