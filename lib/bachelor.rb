@@ -50,22 +50,11 @@ def get_average_age_for_season(data, season)
   total_count = []
   data.each do |season_num, hash|
     if season_num = season
-    hash.each do |outcome|
-      total_count << outcome["age"].to_i
-    end
-   end
-  end
-  num = total_count.reduce(:+).to_f/total_count.length.to_f
-  num.round
-  
-  age_array = []
- data.each do |season_number, season_hash|
-    if season_number == season
-      season_hash.each do |contestant|
-        age_array << contestant["age"].to_i
+      hash.each do |outcome|
+        total_count << outcome["age"].to_i
       end
     end
   end
-  avg = age_array.reduce(:+).to_f/age_array.length.to_f
-  avg.round
+  num = total_count/total_count.length.to_f
+  num.round
 end
