@@ -15,11 +15,9 @@ end
 def get_contestant_name(data, occupation)
   silly_string = ""
   data.each do |season_num, hash|
-    if season_num == season
-      hash.each do |outcome|
-        if outcome["occupation"] == occupation
-          silly_string = outcome["name"]
-        end
+    hash.each do |outcome|
+      if outcome["occupation"] == occupation
+        silly_string = outcome["name"]
       end
     end
   end
